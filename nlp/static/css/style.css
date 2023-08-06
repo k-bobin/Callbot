@@ -1,0 +1,142 @@
+*{
+  font-family:'Spoqa Han Sans Neo';
+  
+  /* background: linear-gradient(to bottom, #2b5876, #4e4376); */
+  /* background: linear-gradient(to bottom, #1488CC, #2B32B2); */
+}
+/* #2b5876, #4e4376
+#1488CC, #2B32B2 */
+
+.index_home{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #0052D4, #4364F7, #6FB1FC);
+  min-height: 100vh;
+}
+
+.container-sm.border{ /*전체 글 박스*/
+  height: 80vh;
+  width: 70vh; 
+  overflow-y: scroll;
+  /* background: linear-gradient(to bottom, #e1e7fa, #d4e4fd); */
+  margin-top: 50px;
+  background-color: #cbe2fb;
+  border-radius: 10px;
+}
+/* .container-md {
+  height: 5vh;
+  width: 200vh;
+  padding: 0;
+} */
+
+
+
+.list-group-item:first-child {  /*말풍선 전체 클래스*/
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-radius: 20px;
+}
+
+
+
+.user {  /*사람이 말하는 말풍선*/
+  position: relative;
+  display: inline-block;
+  font-family:'Spoqa Han Sans Neo';
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #6b99ea;
+  /* background: linear-gradient(to right, #6b99ea, #607eeb); */
+
+  color: white;
+  border-radius: 20px;
+  margin-left: 5vh;
+}
+.admin { /*GPT가 말하는 말풍선*/
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 1.5em;
+  font-family:'Spoqa Han Sans Neo';
+  font-weight: bold;
+  /* padding: 10px 15px; */
+  /* background: linear-gradient(to right, #dfe2ed, #d7dade); */
+  background: linear-gradient(to right, #f8f9fd, #f1f6fd);
+  color: black;
+  border-radius: 20px;
+  /* width: 40vh; */
+  width: 60vh;
+}
+/* 
+#voice-button{
+  display:flex;
+  justify-content: end;
+} */
+.mic{
+  font-size: 4em;
+}
+
+
+.input-group {
+  position: relative;
+  display: flex;
+  JUSTIFY-CONTENT: end;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+#voice-button {
+  background-color: white;
+}
+
+
+
+.btn{
+  background: none;
+  border: 2px solid blue;
+  font-size: 45px;
+  color: black;
+  padding:10px 20px;
+  width: 250px;
+  cursor: pointer;
+  position: relative;
+  font-weight: bold;
+}
+
+.btn-swap span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #1e00ff;
+  color: white;
+  padding: 10px 20px;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s;
+
+}
+
+.btn-swap:hover span{
+  opacity: 1;
+}
+
+.btn-swap::before{
+  content: "";
+  width:0%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #1e00ff;
+  transition: width 0.5s;
+
+}
+
+.btn-swap:hover::before{
+  width: 100%;
+}

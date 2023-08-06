@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <title>GPT를 이용한 은행의 새로운 지능형 파트너, 콜봇 Poriends!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+  </head>
+
+  <body>
+    <!-- Begin page content -->
+    <div class="index_home">
+      <div class="container">
+        <!-- 전체 글 박스-->
+        <div id="container-sm" class="container-sm border">
+          <div id="list-group" class="list-group w-auto">
+            <div class="list-group-item admin">
+              <div class="d-flex gap-2 w-100">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="twbs" width="32" height="32">
+                <div>
+                  <p class="mb-0 opacity-75">안녕하세요. GPT를 이용한 금융서비스 콜봇, 포렌즈입니다. 우측 하단의 마이크 아이콘에 접근하세요. 마이크 기능을 활용하여 다양한 기능을 제공합니다.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <!-- 전체 글 박스-->
+
+        <div class="input-group mb-3">
+          <!-- 아래 마이크 박스-->
+          <div class="input-group-append">
+            <button class="btn btn-swap material-icons" id="voice-button" type="button">mic
+
+              <span>음성인식</span>
+            </button>
+          </div>
+
+        </div>
+        <!--</div>-->
+      </div>
+      <!--</main>-->
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script>
+      $("#voice-button").mouseenter(function () {
+
+        var question = 100;
+        //AJAX CALL TO THE SERVER
+        $.ajax({
+          type: "POST",
+          url: "/index",
+          data: {
+            prompt: question
+          },
+          success: function (data) {
+            //var question = $("#chat-input").val();
+            let html_data = "";
+            html_data += `
+            <div class="list-group-item user">
+              <div class="d-flex gap-2 w-100 justify-content-end">
+                <div>
+                  <p class="opacity-75" id="quest">${data.question}</p>
+                </div>
+                <img src="{{ url_for('static', filename='images/profile2.jpg') }}" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+              </div>
+            </div>
+            `;
+            $("#list-group").append(html_data);
+            $("#container-sm").scrollTop($("#list-group")[0].scrollHeight);
+            setTimeout(function () {
+              let gpt_data = "";
+              gpt_data += `
+            <div class="list-group-item admin">
+             <div class="d-flex gap-2 w-100"> 
+              <img src="{{ url_for('static', filename='images/logo.png') }}" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+              <div>
+               <p class="mb-0 opacity-75">${data.answer}</p> 
+              </div> 
+            </div> 
+          </div>
+          `;
+
+              $("#list-group").append(gpt_data);
+              // 스크롤이 항상 맨 아래로
+              $("#container-sm").scrollTop($("#list-group")[0].scrollHeight);
+            }, 1000);
+          }
+        });
+      });
+
+      $("#voice-button").mouseleave(function () {
+        var question2 = 101;
+        $.ajax({
+          type: 'POST',
+          url: '/index',
+          data: {
+            prompt: question2
+          },
+          success: function (data) {
+            console.log(2)
+          }
+        })
+
+      });
+    </script>
+  </body>
+
+</html>

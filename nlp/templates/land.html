@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>k-트레이닝 해커톤</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/land.css') }}"/>
+  </head>
+
+  <body>
+
+    <!-- 4:8비율로 그리드를 분할 -->
+    <div class="index1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="kb">
+              <em>포렌즈, Poriends</em>
+            </h1>
+            <h1 class="main_txt">GPT를 이용한 은행의 새로운 지능형 파트너 콜봇 서비스</h1>
+          </div>
+        </div>
+        <div class="row" style="padding-top: 20px">
+          <div class="col-lg-10">
+            <div class="sub_txt">
+              <span class="material-icons" id="people">people &nbsp</span>
+              <span class="tedri">
+                <span class="material-icons">search
+                </span>
+                <span id="dynamic" class="lg-text">&nbsp
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <a href="index" class="button_index" id="start" type="button">시작하기</a>
+          </div>
+        </div>
+        <div class="row"></div>
+        <div class="main_txt">&nbsp</div>
+      </div>
+    </div>
+    <!-- index1 -->
+
+    <!-- 2:공백(2):8비율로 그리드를 분할 -->
+    <div class="index2">
+      <div class="container">
+        <!-- 2-->
+        <div class="row">
+          <div class="col-lg-5">
+            <h1 class="main_txt1">
+              자신에게 맞는
+              <br>금융상품을
+              <br>추천 받아보세요</h1>
+            <h3 class="main_txt2">
+              #카드 #적금 #대출
+            </h3>
+          </div>
+
+          <div class="col-lg-7">
+            <img class="float-left" id="photo" src="{{ url_for('static', filename='images/ppp_1.png') }}" alt="">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 3:공백(1):4:공백(1):3 비율로 그리드를 분할 -->
+    <div class="index3">
+      <div class="container">
+        <div class="row">
+          <!-- 1 -->
+          <div class="col-lg-5">
+            <h1 class="main_txt3">
+              금융상품 첫걸음,<br>안면인식과 함께
+              <br>추천상품을
+              <br>함께 확인하세요</h1>
+          </div>
+
+          <div class="col-lg-7"></div>
+        </div>
+
+        <div class="row">
+          <!-- 2 -->
+          <div class="col-lg-1"></div>
+          <div class="col-lg-4">
+            <img class="photo1" src="{{ url_for('static', filename='images/logogo.png') }}" alt="">
+            <h1 class="main_txt4_1">
+              포렌즈, Poriends
+            </h1>
+
+            <h1 class="main_txt4">
+              <br>Chat GPT를 기반으로
+              <br>자신에게 맞는
+              <br>금융서비스를 이용하세요.
+            </h1>
+          </div>
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4">
+            <img class="photo2" src="{{ url_for('static', filename='images/face.png') }}" alt="">
+            <h1 class="main_txt5_1">
+              보안성 강화
+            </h1>
+            <h1 class="main_txt5">
+              <br>Anti-Spoofing 기능의
+              <br>얼굴 인식을 통해 보안성을
+              <br>업그레이드 하였습니다.</h1>
+          </div>
+          <div class="col-lg-1"></div>
+        </div>
+
+        <div class="row">
+          <!-- 3 -->
+          <div class="col-lg-1"></div>
+          <div class="col-lg-4">
+            <img class="photo3" src="{{ url_for('static', filename='images/mic.png') }}" alt="">
+            <h1 class="main_txt6_1">
+              콜봇 서비스
+            </h1>
+            <h1 class="main_txt6">
+              <br>자신이 원하는 서비스를
+              <br>음성을 통해
+              <br>한 번에 확인하세요</h1>
+          </div>
+          <div class="col-lg-2"></div>
+          <div class="col-lg-4">
+            <img class="photo4" src="{{ url_for('static', filename='images/nlp.png') }}" alt="">
+            <h1 class="main_txt7_1">
+              프롬프트 엔지니어링
+            </h1>
+            <h1 class="main_txt7">
+              <br>카드,적금,대출상품 추천과
+              <br>고객DB를 통한 분실신고도
+              <br>함께 확인하세요</h1>
+          </div>
+          <div class="col-lg-1"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="index4">
+      <div class="container">
+        <div class="card-wrap">
+          <div class="col-lg-4 card-box">
+            <div class="img-gradient"></div>
+            <!--이 div에만 class지정*/-->
+            <img class="inmul" src="{{ url_for('static', filename='images/혁준.PNG') }}" id="inmul1" alt="">
+            <div class="text-wrap">
+              <h1>권혁준</h1>
+              <!--<p>bitgold is good</p>-->
+            </div>
+            <a class="play-btn" href="" target="_blank"></a>
+          </div>
+
+          <div class="col-lg-4 card-box">
+            <div class="img-gradient"></div>
+            <img class="inmul" src="{{ url_for('static', filename='images/보빈.PNG') }}" id="inmul2" alt="">
+            <div class="text-wrap">
+              <h1>김보빈</h1>
+              <!--<p>bitgold is good</p>-->
+            </div>
+            <a class="play-btn" href="" target="_blank"></a>
+          </div>
+
+          <div class="col-lg-4 card-box">
+            <div class="img-gradient"></div>
+            <img class="inmul" src="{{ url_for('static', filename='images/기문.PNG') }}" id="inmul3" alt="">
+            <div class="text-wrap">
+              <h1>이기문</h1>
+              <!--<p>bitgold is good</p>-->
+
+            </div>
+            <a class="play-btn" href="" target="_blank"></a>
+          </div>
+        </div>
+
+        <div class="card-wrap">
+          <div class="col-lg-4 card-box">
+            <div class="img-gradient"></div>
+            <img class="inmul" src="{{ url_for('static', filename='images/수진.PNG') }}" id="inmul4" alt="">
+            <div class="text-wrap">
+              <h1>이수진</h1>
+              <!--<p>bitgold is good</p>-->
+            </div>
+            <a class="play-btn" href="" target="_blank"></a>
+          </div>
+
+          <div class="col-lg-4 card-box">
+            <div class="img-gradient"></div>
+            <img class="inmul" src="{{ url_for('static', filename='images/진호.PNG') }}" id="inmul5" alt="">
+            <div class="text-wrap">
+              <h1>정진호</h1>
+              <!--<p>bitgold is good</p>-->
+            </div>
+            <a class="play-btn" href="" target="_blank"></a>
+          </div>
+
+        </div>
+      </div>
+      <script src="{{ url_for('static', filename='js/land.js') }}"></script>
+
+    </body>
+
+  </html>

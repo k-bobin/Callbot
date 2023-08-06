@@ -1,0 +1,31 @@
+오후 5:35 2023-06-17
+
+1. 빈 폴더 생성
+
+2. 가상환경 생성
+py -m venv HOME
+->HOME이라는 폴더에 이상한 것들이 생길거임
+
+3. 가상환경 실행
+cd HOME
+cd Script (S만 치고 탭키누르면 자동 완성됨)
+activate
+-> 왼쪽에 HOME이라는 게 생김
+
+4. 필요 라이브러리 설치
+빈 폴더 생성 (workspace)
+requirement.txt파일 복사
+pip install -r requirements.txt
+-> 라이브러리 설치됨 (도중에 오류뜨는지 확인)
+
+5. 파일 옮기기
+
+6.python app.py실행
+ 
+7. 실행창에 WARNING: This is a development server. Do not use it in a production deployment. 가 뜰거임
+
+8. set FLASK_ENV=development
+(애플리케이션을 프로덕션에 배포하기 위한 한 가지 옵션은 프로덕션 WSGI 서버인 Waitress를 사용하는 것입니다.)
+
+
+9. 이제 warning 메시지가 드지 않는다.

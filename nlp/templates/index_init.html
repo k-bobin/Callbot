@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Demonstration of ChatGPT API in a Python Flask Application. A Skolo Online course."/>
+
+    <title>>GPT를 이용한 은행의 새로운 지능형 파트너, 콜봇 Poriends!</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.png') }}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+  </head>
+
+  <body>
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">K-디지털 트레이닝 해커톤 B4After</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0"></ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+      <div class="container">
+        <br/>
+        <br/>
+        <h1 class="mt-5">GPT를 이용한 은행의 새로운 지능형 파트너, 콜봇 Poriends!</h1>
+        <p class="lead">
+          콜봇 포렌즈는 당신의 금융 업무를 음성을 통해 쉽게 도와줍니다.
+        </p>
+        <ul>
+          <!--<li> OpenAI API Key, which you can get here: <a href="https://openai.com/product#made-for-developers">OpenAI Website</a> </li> </ul> -->
+
+          <div id="container-sm" class="container-sm border">
+            <!--<p>container test</p>-->
+            <div id="list-group" class="list-group w-auto"></div>
+          </div>
+
+          <div id="container-md" class="container-md">
+
+            <div class="input-group mb-3">
+              <!--<input type="text" class="form-control" id="chat-input_voice"/>-->
+              <!--질문텍스트칸 id는 chat-input-->
+              <div class="input-group-append">
+                <button id="voice-button" type="button">
+                  <img src="{{ url_for('static', filename='images/microphone.png') }}" width="70" height="70"/>
+                </button>
+                <button class= "btn btn-swap" id="voice-2">
+                  BUY <span>Sold out</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+      <script>
+        $("#voice-button").mouseenter(function () {
+
+          var question = 100;
+          //AJAX CALL TO THE SERVER
+          $.ajax({
+            type: "POST",
+            url: "/",
+            data: {
+              prompt: question
+            },
+            success: function (data) {
+              //var question = $("#chat-input").val();
+              let html_data = "";
+              html_data += `
+            <div class="list-group-item user">
+              <div class="d-flex gap-2 w-100 justify-content-end">
+                <div>
+                  <p class="opacity-75" id="quest">${data.question}</p>
+                </div>
+                <img src="{{ url_for('static', filename='images/profile2.jpg') }}" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+              </div>
+            </div>
+            `;
+              $("#list-group").append(html_data);
+              $("#container-sm").scrollTop($("#list-group")[0].scrollHeight);
+              setTimeout(function () {
+                let gpt_data = "";
+                gpt_data += `
+            <div class="list-group-item admin">
+             <div class="d-flex gap-2 w-100"> 
+              <img src="{{ url_for('static', filename='images/logo.png') }}" alt="twbs" width="32" height="32" class="rounded-circle flex-shrink-0">
+              <div>
+               <p class="mb-0 opacity-75">${data.answer}</p> 
+              </div> 
+            </div> 
+          </div>
+          `;
+
+                $("#list-group").append(gpt_data);
+                // 스크롤이 항상 맨 아래로
+                $("#container-sm").scrollTop($("#list-group")[0].scrollHeight);
+              }, 1000);
+            }
+          });
+        });
+
+        $("#voice-button").mouseleave(function () {
+          var question2 = 101;
+          $.ajax({
+            type: 'POST',
+            url: '/',
+            data: {
+              prompt: question2
+            },
+            success: function (data) {
+              console.log(2)
+            }
+          })
+
+        });
+      </script>
+    </body>
+
+  </html>

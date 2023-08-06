@@ -1,0 +1,435 @@
+*{
+    font-family:'Spoqa Han Sans Neo';
+}
+
+.container{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.index1{
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(map_main.png) fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.index2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.index3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:rgba(0, 0, 0, 0.03);
+}
+
+.index4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120vh;
+}
+
+.kb{
+    font-size: 6em;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.main_txt{
+    font-size: 3em;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+
+.col-lg-5 {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-around;
+}
+
+em{
+    color: #607eeb;
+    font-style: normal;
+}
+
+#people{
+    font-size: 4em;
+}
+
+.material-icons{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.sub_txt{
+    color:white;
+}
+
+.tedri{
+    display: inline-flex;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    border-style: solid;
+    border : 5px #607eeb solid;
+    padding: 8px;
+    min-width : 800px;
+    height : auto;
+}
+
+.button_index {
+    font-size:1.5em;
+    width:150px;
+    height:65px;
+    border : 0px #607eeb solid;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #607eeb;
+    border-radius: 10px;
+    text-shadow: 2px 2px 6px #000;
+    margin-top: 5%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+
+  .button_index:hover {
+    color: rgb(255,255,255,0.9);
+    text-shadow: 2px 2px 6px #000;
+  }
+
+
+.main_txt1{
+    font-size: 3.5em;
+    text-align: left;
+    color: black;
+    font-weight: 600;
+}
+
+
+.main_txt2{
+    font-size: 2em;
+    color: black;
+    font-weight: 600;
+    
+}
+
+#photo{
+    width: 100%;
+    height: 110%;
+    filter: drop-shadow(5px 5px 20px #000);
+}
+
+
+
+
+
+.main_txt3{
+    font-size: 3em;  /*글자 가로폭조정*/
+    color: black;
+    margin-top: 30%;
+    max-width:1000px; 
+    text-align: left;
+    font-weight: 700;
+    /* animation: slide 1s ease-out;  */
+}
+
+
+
+.black_filter{
+    background-color:rgba(0, 0, 0, 0.5); /*살짝 투명한 검정으로 배경색*/
+    width:100%;
+    position: absolute; /*다른 요소들 위로 겹쳐질 수 있게함*/
+}
+
+.photo1{
+    width: 210px;
+    height: 205px;
+    margin-top: 150px;
+
+}
+
+.main_txt4_1{
+    margin-top: 5%;
+    font-size: 2.5em;
+    font-weight: 600;
+}   
+
+.main_txt4{
+    font-size: 1.5em;
+    font-weight: 600;
+    color : rgb(107, 118, 132);
+}
+
+.photo2{
+    width: 210px;
+    height: 205px;
+    margin-top: 150px;
+}
+
+.main_txt5_1{
+    font-size: 2.5em;
+    margin-top: 5%;
+    font-weight: 600;
+}   
+
+.main_txt5{
+    font-size: 1.5em;
+    font-weight: 600;
+    color : rgb(107, 118, 132);
+}
+
+
+.photo3{
+    width: 210px;
+    height: 205px;
+    margin-top: 30%;
+    margin-bottom: 10%;
+
+}
+
+.main_txt6_1{
+    margin-top: 5%;
+    font-size: 2.5em;
+    font-weight: 600;
+}   
+
+.main_txt6{
+    font-size: 1.5em;
+    font-weight: 600;
+    color : rgb(107, 118, 132);
+}
+
+.photo4{
+    width: 210px;
+    height: 205px;
+    margin-top: 30%;
+    margin-bottom: 10%;
+
+}
+
+.main_txt7_1{
+    margin-top: 5%;
+    font-size: 2.5em;
+    font-weight: 600;
+}   
+
+.main_txt7{
+    font-size: 1.5em;
+    font-weight: 600;
+    color : rgb(107, 118, 132);
+    margin-bottom: 50%;
+}
+
+.card-wrap {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.card-box{
+    position: relative; /*얘 기준에 맞춰서 상대적으로 맞추는듯?*/
+    border-radius: 16px;
+    overflow: hidden; /*다른 부모의 높이에 넘어가는 걸 숨김*/
+    width: 100%;
+    max-width: 300px;
+    height: 360px;
+    box-shadow: 20px 25px rgba(0,0,0,0.20);
+    transition: 0.3s;
+    text-align: center;
+    /* background-color:rgba(255,176,0,0.2); */
+}
+ 
+.card-box:hover{
+    transform:scale(0.95);
+    
+}
+ 
+.img-gradient{
+    position: absolute;  /*위치를 절대적으로*/
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.05));
+    z-index: 1;
+}
+ 
+.text-wrap{
+    position: absolute;
+    bottom:0;
+    padding: 24px;
+    /* text-align:left; */
+    left: 80px;
+    z-index: 2; /*z축으로 앞,뒤로 보내는 역할*/
+}
+ 
+.text-wrap h1{
+    color: #fff;
+    text-shadow: 2px 2px 6px #000;
+    font-size: 24px;
+    margin-left:12px;
+    margin-bottom:8px;
+    font-weight: bold;
+}
+ 
+.play-btn{
+    width:60px;
+    height: 60px;
+    position: absolute;
+    right:24px;
+    top: 24px;
+    /* background-color: rgba(96,126,235); */
+    background-color: rgb(255, 255, 255);
+    /* background: rgba(78, 83, 231,0.8) url(logogogo.png) no-repeat center; */
+    background: rgba(124, 183, 255, 0.8) url(logogogo.png) no-repeat center;
+    /* no-repeat center;  ..으로 바깥으로 나간다음 img폴더에 있는 파일로 드감 */
+    background-size: 50px;
+    border-radius: 50%;
+    z-index: 2;
+}
+ 
+.play-btn:focus{
+    outline:0;
+}
+ 
+.play-btn:hover{
+    background-color: rgba(96,126,235, 0.6);
+    cursor:pointer;
+    box-shadow: 0 2px 4px rgba(78, 83, 231, 0.8);
+}
+
+.inmul{
+    margin-top: 80px;
+    width: 80%;
+}
+
+#inmul1{
+    margin-top: 50px;
+}
+
+#inmul2{
+    margin-top: 60px;
+}
+
+#inmul3{
+    margin-top: 60px;
+}
+
+#inmul4{
+    margin-top: 45px;
+}
+
+#inmul5{
+    margin-top: 55px;
+}
+
+
+
+@keyframes main_slide{
+    from{
+        margin-left: 0%;
+        opacity: 0; /*선명도*/
+
+    }
+
+    to{
+        margin-left:0%;
+        opacity: 1;
+    }
+}
+
+@keyframes main_disappear {
+    from{
+        margin-left:0%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0%;
+        opacity: 0; /*선명도*/
+    }
+}
+
+
+
+
+
+@keyframes text_slide{
+    from{
+        margin-left:0%;
+        opacity: 0; /*선명도*/
+
+    }
+
+    to{
+        margin-left:5%;
+        opacity: 1;
+    }
+}
+
+@keyframes text_disappear {
+    from{
+        margin-left:5%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 0%;
+        opacity: 0; /*선명도*/
+    }
+}
+
+@keyframes img_slide{
+    from{
+        margin-left: 30%;
+        opacity: 0; /*선명도*/
+
+    }
+
+    to{
+        margin-left:15%;
+        opacity: 1;
+    }
+}
+
+@keyframes img_disappear {
+    from{
+        margin-left:15%;
+        opacity: 1;
+    }
+    to{
+        margin-left: 30%;
+        opacity: 0; /*선명도*/
+    }
+}
+
+#dynamic{
+    position: relative;
+    display: inline-flex;
+}
+
+#dynamic::after{
+    content:"";
+    display: block;
+    position: absolute;
+    top:0;
+    right: -10px;
+    width:4px;
+    height:40px;
+    margin-top: 10px;
+    background-color: white;
+}
+
+#dynamic.active::after{
+    display: none;
+}
